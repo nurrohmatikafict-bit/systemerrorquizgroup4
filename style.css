@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&family=VT323&display=swap');
+
+:root{
+    --bg:#05060a;
+    --cyan:#00f0ff;
+    --red:#ff3b3b;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    font-family:'Rajdhani', sans-serif;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    background-image:url('assets/wallpaper.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    background-color:black;
+
+    color:white;
+}
+
+/* ================= SCREEN ================= */
+
+.os-screen{
+    position:absolute;
+    inset:0;
+
+    display:none;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+.os-screen.active{
+    display:flex;
+}
+
+/* ================= TITLE ================= */
+
+.main-title{
+
+    font-family:'Orbitron', sans-serif;
+
+    font-size:4rem;
+
+    color:var(--cyan);
+
+    letter-spacing:4px;
+
+    text-shadow:0 0 15px var(--cyan);
+
+    animation:glitch 1s infinite;
+}
+
+.sub-title{
+
+    margin-top:10px;
+    margin-bottom:40px;
+
+    color:#94a3b8;
+
+    letter-spacing:2px;
+
+    font-size:1rem;
+}
+
+/* ================= MENU ================= */
+
+.menu-cluster{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-os{
+
+    width:260px;
+
+    padding:14px 20px;
+
+    background:rgba(0,0,0,0.8);
+
+    border:1px solid #1e293b;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    letter-spacing:1px;
+
+    transition:0.25s;
+}
+
+.btn-os:hover{
+
+    border-color:var(--cyan);
+
+    transform:translateX(5px);
+
+    box-shadow:0 0 15px rgba(0,240,255,0.4);
+
+    background:rgba(0,20,30,0.9);
+}
+
+/* ================= WARNING IMAGE ================= */
+
+.warning-img{
+
+    width:120px;
+
+    margin-bottom:20px;
+
+    filter:drop-shadow(0 0 10px red);
+
+    animation:warningPulse 2s infinite;
+}
+
+@keyframes warningPulse{
+
+    0%{
+        opacity:0.5;
+        transform:scale(1);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.05);
+    }
+
+    100%{
+        opacity:0.5;
+        transform:scale(1);
+    }
+
+}
+
+/* ================= WORKSPACE ================= */
+
+.workspace-card{
+
+    width:700px;
+
+    background:rgba(0,0,0,0.85);
+
+    border:1px solid #1e293b;
+
+    border-radius:6px;
+
+    overflow:hidden;
+
+    box-shadow:0 0 25px rgba(0,0,0,0.8);
+}
+
+.card-header{
+
+    padding:15px 20px;
+
+    background:#02040a;
+
+    border-bottom:1px solid #1e293b;
+
+    color:var(--cyan);
+
+    font-family:'Orbitron', sans-serif;
+
+    letter-spacing:1px;
+}
+
+.card-body{
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    font-family:'Share Tech Mono', monospace;
+}
+
+/* ================= QUIZ ================= */
+
+#quiz-question{
+
+    font-size:1.2rem;
+
+    line-height:1.6;
+
+    margin-bottom:15px;
+}
+
+/* ================= ANSWER BUTTON ================= */
+
+.answer-btn{
+
+    padding:14px;
+
+    background:#0f172a;
+
+    border:1px solid #1e293b;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:0.2s;
+
+    text-align:left;
+
+    font-family:'Share Tech Mono', monospace;
+}
+
+.answer-btn:hover{
+
+    border-color:var(--cyan);
+
+    background:#132033;
+
+    transform:translateX(3px);
+}
+
+/* ================= HUD ================= */
+
+.hud-top-bar{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:15px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    background:rgba(0,0,0,0.85);
+
+    border-bottom:1px solid #1e293b;
+
+    font-family:'Orbitron', sans-serif;
+}
+
+/* ================= LOADING ================= */
+
+.center-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+.loading-text{
+
+    margin-top:20px;
+    margin-bottom:20px;
+
+    font-family:'Share Tech Mono', monospace;
+
+    letter-spacing:1px;
+}
+
+.bar-container{
+
+    width:300px;
+
+    height:10px;
+
+    background:#111827;
+
+    border:1px solid #1e293b;
+
+    overflow:hidden;
+}
+
+#load-bar-fill{
+
+    width:0%;
+    height:100%;
+
+    background:var(--cyan);
+
+    transition:0.2s;
+}
+
+#boot-prompt{
+
+    margin-top:20px;
+
+    color:var(--cyan);
+
+    cursor:pointer;
+
+    animation:blink 1s infinite;
+
+    font-family:'VT323', monospace;
+
+    font-size:1.5rem;
+
+    letter-spacing:2px;
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:0.3;
+    }
+
+}
+
+/* ================= GLITCH ================= */
+
+.glitch-txt{
+
+    animation:glitch 1s infinite;
+}
+
+@keyframes glitch{
+
+    0%{
+        transform:translate(0);
+    }
+
+    25%{
+        transform:translate(2px,-2px);
+    }
+
+    50%{
+        transform:translate(-2px,2px);
+    }
+
+    75%{
+        transform:translate(2px,2px);
+    }
+
+    100%{
+        transform:translate(0);
+    }
+
+}
+
+/* ================= CRT FILTER ================= */
+
+.crt-filter{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:rgba(255,255,255,0.02);
+
+    z-index:100;
+}
+
+.scanlines-filter{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:linear-gradient(
+        rgba(255,255,255,0.03) 50%,
+        rgba(0,0,0,0.08) 50%
+    );
+
+    background-size:100% 4px;
+
+    z-index:101;
+}
+
+/* ================= FOOTER ================= */
+
+.system-footer{
+
+    position:fixed;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+
+    padding:10px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(0,0,0,0.7);
+
+    border-top:1px solid #1e293b;
+
+    font-size:0.8rem;
+
+    color:#64748b;
+
+    font-family:'Share Tech Mono', monospace;
+
+    z-index:200;
+
+    animation:blinkFooter 2s infinite;
+}
+
+@keyframes blinkFooter{
+
+    50%{
+        opacity:0.6;
+    }
+
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM ERROR: QUIZ MODE</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="crt-filter"></div>
+    <div class="scanlines-filter"></div>
+
+    <div id="os-frame">
+
+        <!-- LOADING -->
+        <div id="scr-loading" class="os-screen active">
+
+            <div class="center-panel">
+
+                <h1 class="main-title">SYSTEM ERROR</h1>
+
+                <p class="loading-text">
+                    INITIALIZING SYSTEM...
+                </p>
+
+                <div class="bar-container">
+                    <div id="load-bar-fill"></div>
+                </div>
+
+                <p id="boot-prompt">
+                    CLICK TO CONTINUE
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- MENU -->
+        <div id="scr-menu" class="os-screen">
+
+            <h1 class="main-title glitch-txt">
+                SYSTEM ERROR
+            </h1>
+
+            <h2 class="sub-title">
+                QUIZ MODE v2.06
+            </h2>
+
+            <div class="menu-cluster">
+
+                <img
+                    src="assets/warning.jpg"
+                    class="warning-img">
+
+                <button
+                    id="startButton"
+                    class="btn-os"
+                    onclick="startGameWithSound()">
+
+                    START REPAIR
+
+                </button>
+
+                <button
+                    class="btn-os"
+                    onclick="openHelp()">
+
+                    HOW TO PLAY
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- GAME -->
+        <div id="scr-desktop" class="os-screen">
+
+            <div class="hud-top-bar">
+
+                <div>
+                    SANITY:
+                    <span id="sanity-display">100</span>
+                </div>
+
+                <div>
+                    SCORE:
+                    <span id="score-display">0</span>
+                </div>
+
+            </div>
+
+            <div class="workspace-card">
+
+                <div class="card-header">
+                    QUIZ SYSTEM
+                </div>
+
+                <div class="card-body">
+
+                    <p id="quiz-question">
+                        Loading question...
+                    </p>
+
+                    <div id="quiz-options"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+
+    <footer class="system-footer">
+
+    <span>&copy; Kelompok 4</span>
+
+</footer>
+
+</body>
+</html>
